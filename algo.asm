@@ -89,11 +89,11 @@ inicio:
  MOV cx, 2 ; CX = 2: indica igualdad
 .fin_cmp:
  ; Bucle: suma acumulada de 1 a 5 (resultado esperado: 15)
- XOR ax, ax ; AX = 0 (acumulador)
+ MOV ax, 1 ; AX = 1 (Asigna)
  MOV cx, 5 ; CX = contador del bucle
  MOV bx, 1 ; BX = valor inicial a sumar
 .bucle_suma:
- ADD ax, bx ; AX += BX
+ MUL bx ; AX = AX * BX
  INC bx ; BX++ (siguiente valor)
  LOOP .bucle_suma ; DEC CX; si CX != 0 → .bucle_suma
  ; Al terminar: AX = 1+2+3+4+5 = 15
